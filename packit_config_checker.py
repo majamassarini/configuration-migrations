@@ -42,6 +42,9 @@ services = {
     GitlabService(
         instance_url="https://gitlab.gnome.org", token=getenv("GITLAB_GNOME_TOKEN")
     ),
+    GitlabService(
+        instance_url="https://salsa.debian.org", token=getenv("SALSA_DEBIAN_TOKEN")
+    ),
 }
 
 
@@ -360,7 +363,8 @@ def get_active_projects() -> List[str]:
      in the past year to the directory specified as config_dir.
 
     You may need to specify the GITHUB_TOKEN env var (and additionally
-    GITLAB_TOKEN, GITLAB_GNOME_TOKEN, GITLAB_FREEDESKTOP_TOKEN)
+    GITLAB_TOKEN, GITLAB_GNOME_TOKEN, GITLAB_FREEDESKTOP_TOKEN,
+    SALSA_DEBIAN_TOKEN)
     since there is a limit for unauthenticated API calls.
 
     \b
